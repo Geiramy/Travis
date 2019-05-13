@@ -7,5 +7,8 @@ script:
 
 after_success:
   - pip install --user awscli
-  - eval $(aws ecr get-login --region eu-west-1 --no-include-email)
+  - eval $(aws ecr get-login --region us-east-2 --no-include-email)
+  - docker build -t isentest .
+  - docker tag isentest 503259967594.dkr.ecr.us-east-2.amazonaws.com/isentestaws
+  - docker push 503259967594.dkr.ecr.us-east-2.amazonaws.com/isentestaws
 
