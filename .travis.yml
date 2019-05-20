@@ -11,4 +11,6 @@ after_success:
   - docker build -t isentest .
   - docker tag isentest 503259967594.dkr.ecr.us-east-2.amazonaws.com/isentestaws
   - docker push 503259967594.dkr.ecr.us-east-2.amazonaws.com/isentestaws
+  - kubectl apply -f kubernetes.yaml
+
 
