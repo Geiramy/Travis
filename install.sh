@@ -7,8 +7,8 @@ chmod +x ./kubectl
 sudo mv ./kubectl /usr/local/bin/kubectl
 curl -o config https://$GITHUB_ACCESS_TOKEN@raw.githubusercontent.com/GithubOrganization/MySecretInfrastructureRepo/master/.kube/config
  
-mkdir ${HOME}/.kube
-cp config ${HOME}/.kube/config
+mkdir $HOME/.kube
+cp config $HOME/.kube/config
  
 # Fill out missing params in kubectl config file
 kubectl config set clusters.default.certificate-authority-data "$KUBE_CLUSTER_CERTIFICATE"
